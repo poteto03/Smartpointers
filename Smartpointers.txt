@@ -1,0 +1,34 @@
+Ariana García 2P 23310171
+SMART POINTERS
+Los smart pointers son punteros inteligentes que facilitan vaciar lo memoria que utilizamos al declarar los punteros. La vacian automaticamente y no lo tengo que hacer yo manualmente, de esa manera me evito problemas de memory leak (fugas de memoria).
+Dependiendo del tipo de smart pointer que se utilice se le puede dar diferente utilidad.
+Un smart pointer es el "unique_ptr", es un puntero que solo se utiliza una vez y que se vacia inmediatamente despues de ser utilzado.
+El "shared_ptr" es un puntero que de igual manera se vaciara pero que puede ser usado en varias clases, se le asigna un contandor de las veces que esta siendo refenciado y cuando ese contador llega a cero se vacia la memoria.
+Y por ultimo el "weak_ptr" es un puntero que puedea hacer referencia a un "shared_ptr" pero no incrementa su conteo, puede servir para comprobrar si el puntero sigue ocupando memoria.
+
+Ejemplo
+#include <iostream>
+#include<memory>
+using namespace std;
+
+class Luz//clase 
+{
+    public:
+    Luz()
+    {
+        cout<<"Luz encendida"<<endl;
+    }
+    ~Luz()
+    {
+        cout<<"Luz apagada"<<endl;
+        
+    }
+    void print(){};
+};
+int main()
+{
+    unique_ptr<Luz> ejemplo = make_unique<Luz>();
+    
+    ejemplo->print();
+    return 0;
+}
