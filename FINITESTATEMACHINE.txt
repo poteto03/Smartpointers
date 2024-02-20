@@ -1,0 +1,7 @@
+Ariana García 23310171
+FINITE STATE MACHINE
+Las maquinas de estado finito (o en inglés "Finite state machine") es una herramienta, abstracción de software, que nos permite representar el comportamiento de un sistema mediante un esquema.
+Se introducen valores y dentro del sistema pasan por diferentes estados (uno a la vez) ya predefinidos. La salida depende de la entrada y del estado actual, es decir cada entrada es manipulada por cada estado cuando pasa por este. 
+Aplicacion a nuestro juego:
+Es mucho más fácil entender que son las FSM cuando las ponemos en aplicación. Para nuestro juego las FSM pueden ser usadas para los combates, tenemos como entrada los valores de salud, ataque, defensa y velocidad de cada personaje, y cada estado del sistema es una acción que estamos ordenando que se realice, por ejemplo, atacar, esquivar y lo que queramos que se realice durante el combate.
+De esa manera podemos llevar a cabo el combate de manera más eficiente pues definimos los estados solo una vez y se ejecuta las veces que le indiquemos.
